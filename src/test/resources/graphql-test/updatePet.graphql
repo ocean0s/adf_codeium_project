@@ -1,0 +1,7 @@
+mutation {
+  updatePet(id: 1, input: { name: "Fido Updated", animalType: "Dog", age: 4, breed: "Golden Retriever" }) {
+    id
+    name
+    animalType
+    age
+    breed

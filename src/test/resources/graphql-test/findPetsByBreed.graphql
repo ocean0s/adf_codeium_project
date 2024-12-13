@@ -1,0 +1,9 @@
+query {
+  findPetsByBreed(breed: "Siamese") {
+    id
+    name
+    animalType
+    age
+    breed
+  }
+}

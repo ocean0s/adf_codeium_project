@@ -1,0 +1,6 @@
+query {
+  getNameAndBreedOnly {
+    name
+    breed
+  }
+}

@@ -1,0 +1,68 @@
+package com.mtu.codeiumproject.controller.graphql;
+
+import com.mtu.codeiumproject.entity.Pet;
+import com.mtu.codeiumproject.service.PetService;
+import lombok.AllArgsConstructor;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+
+@Controller
+@AllArgsConstructor
+public class PetGraphQLController {
+
+    private final PetService petService;
+
+    @QueryMapping
+    List<Pet> getAllPets() {
+        return petService.getAllPets();
+    }
+
+    @QueryMapping
+    Pet getPetById(@Argument Long id) {
+        return petService.getPetById(id);
+    }
+
+    @MutationMapping
+    Pet createPet(@Argument NewPet pet) {
+        Pet p = new Pet(pet.name(), pet.animalType(), pet.age(), pet.breed());
+        return petService.createPet(p);
+    }
+
+    @MutationMapping
+    Pet updatePet(@Argument Long id, @Argument NewPet pet) {
+        Pet p = new Pet(id, pet.name(), pet.animalType(), pet.age(), pet.breed());
+        return petService.updatePet(p);
+    }
+
+    @MutationMapping
+    void deletePetById(@Argument Long id) {
+        petService.deletePetById(id);
+    }
+
+    @MutationMapping
+    void deletePetsByName(@Argument String name) {
+        petService.deletePetsByName(name);
+    }
+
+    @QueryMapping
+    List<Pet> findPetsByAnimalType(@Argument String animalType) {
+        return petService.findPetsByAnimalType(animalType);
+    }
+
+    @QueryMapping
+    List<Pet> findPetsByBreed(@Argument String breed) {
+        return petService.findPetsByBreed(breed);
+    }
+
+    @QueryMapping
+    List<PetSummary> getNameAndBreedOnly() {
+        return petService.getNameAndBreedOnly();
+    }
+
+    @QueryMapping
+    PetStatistics getPetStatistics() {
+        return petService.getPetStatistics();
+    }
+}

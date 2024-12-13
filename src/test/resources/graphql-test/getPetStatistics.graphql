@@ -1,0 +1,6 @@
+query {
+  getPetStatistics {
+    averageAge
+    maxAge
+  }
+}

@@ -1,0 +1,9 @@
+query {
+  findPetsByAnimalType(animalType: "Dog") {
+    id
+    name
+    animalType
+    age
+    breed
+  }
+}

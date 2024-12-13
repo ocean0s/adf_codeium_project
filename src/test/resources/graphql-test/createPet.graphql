@@ -1,0 +1,9 @@
+mutation {
+  createPet(input: { name: "Buddy", animalType: "Dog", age: 1, breed: "Labrador" }) {
+    id
+    name
+    animalType
+    age
+    breed
+  }
+}

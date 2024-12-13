@@ -1,0 +1,9 @@
+query {
+  getAllPets {
+    id
+    name
+    animalType
+    age
+    breed
+  }
+}

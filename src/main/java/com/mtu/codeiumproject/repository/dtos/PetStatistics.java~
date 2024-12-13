@@ -1,0 +1,11 @@
+package com.mtu.codeiumproject.repository.dtos;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class PetStatistics {
+    private Double averageAge;
+    private Integer oldestAge;
+}

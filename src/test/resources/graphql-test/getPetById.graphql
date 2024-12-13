@@ -1,0 +1,9 @@
+query {
+  getPetById(id: 1) {
+    id
+    name
+    animalType
+    age
+    breed
+  }
+}

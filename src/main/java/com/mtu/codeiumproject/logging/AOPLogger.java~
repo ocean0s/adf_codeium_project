@@ -1,0 +1,4 @@
+package com.mtu.codeiumproject.logging;
+
+public class AOPLogger {
+}
