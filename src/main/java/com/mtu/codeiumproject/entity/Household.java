@@ -23,4 +23,11 @@ public class Household {
     private Boolean isOwnerOccupied;
     @OneToMany(mappedBy = "household")
     private List<Pet> pets;
+
+    public Household(String eircode, Integer numberOfOccupants, Integer maxNumberOfOccupants, Boolean isOwnerOccupied) {
+        this.eircode = eircode;
+        this.numberOfOccupants = numberOfOccupants;
+        this.maxNumberOfOccupants = maxNumberOfOccupants;
+        this.isOwnerOccupied = isOwnerOccupied;
+    }
 }

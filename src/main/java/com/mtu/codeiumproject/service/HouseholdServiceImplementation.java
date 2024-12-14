@@ -16,6 +16,7 @@ public class HouseholdServiceImplementation implements HouseholdService {
     @Autowired
     private HouseholdRepository householdRepository;
 
+
     // Find Household by Eircode with pets eagerly loaded
     public Household findHouseholdByEircodeWithPets(String eircode) {
         return householdRepository.findByEircodeWithPets(eircode);
